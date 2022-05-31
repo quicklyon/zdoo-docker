@@ -14,7 +14,7 @@ services:
     ports:
       - '3308:3306'
     volumes:
-      - 'db:/var/lib/mysql'
+      - 'zdoo_db:/var/lib/mysql'
     environment:
       - MYSQL_ROOT_PASSWORD=pass4zDoo
       - MYSQL_DATABASE=zdoo
@@ -46,7 +46,7 @@ services:
 
 # persistence for mysql and zdoo
 volumes:
-  db:
+  zdoo_db:
     driver: local
   zdoo_data:
     driver: local
