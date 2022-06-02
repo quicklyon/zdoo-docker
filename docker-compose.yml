@@ -4,9 +4,7 @@ networks:
   zdoo-net:
     driver: bridge
 
-
 services:
-
 # mysql service for zdoo
   zdoo-mysql:
     image: mysql:5.7
