@@ -24,23 +24,23 @@
             </tr>
             <tr>
               <th><?php echo $lang->install->dbHost;?></th>
-              <td><?php echo html::input('dbHost', getenv('MYSQL_HOST'), "class='text-3 form-control'");?><?php echo $lang->install->dbHostNote;?></td>
+              <td><?php echo html::input('dbHost', (getenv('MYSQL_HOST') ? getenv('MYSQL_HOST') : '127.0.0.1'), "class='text-3 form-control'");?><?php echo $lang->install->dbHostNote;?></td>
             </tr>
             <tr>
               <th><?php echo $lang->install->dbPort;?></th>
-              <td><?php echo html::input('dbPort', getenv('MYSQL_PORT'), "class='text-3 form-control'");?></td>
+              <td><?php echo html::input('dbPort', (getenv('MYSQL_PORT') ? getenv('MYSQL_PORT') : '3306'), "class='text-3 form-control'");?></td>
             </tr>
             <tr>
               <th><?php echo $lang->install->dbUser;?></th>
-              <td><?php echo html::input('dbUser', getenv('MYSQL_USER'), "class='text-3 form-control'");?></td>
+              <td><?php echo html::input('dbUser', (getenv('MYSQL_USER') ? getenv('MYSQL_USER') : 'root') , "class='text-3 form-control'");?></td>
             </tr>
             <tr>
               <th><?php echo $lang->install->dbPassword;?></th>
-              <td><?php echo html::input('dbPassword', getenv('MYSQL_PASSWORD'), "class='text-3 form-control'");?></td>
+              <td><?php echo html::input('dbPassword', (getenv('MYSQL_PASSWORD') ? getenv('MYSQL_PASSWORD') : 'please input password.'), "class='text-3 form-control'");?></td>
             </tr>
             <tr>
               <th><?php echo $lang->install->dbName;?></th>
-              <td><?php echo html::input('dbName', getenv('MYSQL_DB'), "class='text-3 form-control'");?></td>
+              <td><?php echo html::input('dbName', (getenv('MYSQL_DB') ? getenv('MYSQL_DB') : 'zdoo'), "class='text-3 form-control'");?></td>
             </tr>
             <tr>
               <th><?php echo $lang->install->dbPrefix;?></th>
