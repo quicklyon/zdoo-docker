@@ -15,7 +15,6 @@ services:
       - 'zdoo_db:/var/lib/mysql'
     environment:
       - MYSQL_ROOT_PASSWORD=pass4zDoo
-      - MYSQL_DATABASE=zdoo
     networks:
       - zdoo-net
 
