@@ -1,0 +1,12 @@
+{
+    "Name": "ZDoo",
+    "Home": "https://www.zdoo.com/",
+    "GitUrl": "https://www.zdoo.com/page/download.html",
+    "DockerfileUrl": "https://github.com/quicklyon/zdoo-docker",
+    "InstallDocUrl": "https://www.qucheng.com/app-install/install-zdoo-132.html",
+    "Docker": {
+        "Name": "zdoo",
+        "Repo": "https://hub.docker.com/r/easysoft/zdoo",
+        "TagUrl": "https://hub.docker.com/r/easysoft/zdoo/tags/"
+    }
+}
