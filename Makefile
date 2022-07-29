@@ -17,7 +17,6 @@ push: ## push [基础版] 镜像
 	docker push hub.qucheng.com/app/zdoo:$(TAG)
 
 docker-push: ## push [基础版] 镜像
-	docker tag hub.qucheng.com/app/zdoo:$(TAG) easysoft/zdoo:$(TAG)
 	docker tag easysoft/zdoo:$(TAG) easysoft/zdoo:latest
 	docker push easysoft/zdoo:$(TAG) 
 	docker push easysoft/zdoo:latest
