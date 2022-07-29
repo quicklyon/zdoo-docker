@@ -16,6 +16,12 @@ set -o pipefail
 # Load Apache/PHP//zdoo environment variables
 . /etc/s6/s6-init/envs
 
+#======================#
+# Check MySQL service  #
+#======================#
+# Check and waiting mysql to be ready
+wait_for_mysql || exit 1
+
 #==================================#
 # Prepare persistence directories. #
 #==================================#
@@ -31,6 +37,9 @@ done
 if [ ! -f /data/zdoo/.init_cfg ];then
     ensure_dir_exists "/data/zdoo" "www-data"
     mv /apps/zdoo/config /data/zdoo/ && touch /data/zdoo/.init_cfg 
+    
+    # Check whether the database exists after the initial startup
+    mysql_remove_db "$MYSQL_DB"
 fi
 
 for ldir in $PERSISTENCE_LINK_LIST
@@ -57,12 +66,3 @@ SITE_CFG="/etc/apache2/sites-enabled/site.conf"
 info "Render apache sites config with envionment variables."
 /usr/bin/render-template ${SITE_CFG}.tpl > $SITE_CFG
 
-#======================#
-# Check MySQL service  #
-#======================#
-# Check and waiting mysql to be ready
-wait_for_mysql || exit 1
-
-# Initialize database
-# If the database exists, it will report an error
-# mysql_init_db "$MYSQL_DB"

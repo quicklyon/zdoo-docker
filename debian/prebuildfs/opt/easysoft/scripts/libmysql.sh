@@ -70,6 +70,30 @@ mysql_init_db() {
 }
 
 ########################
+# remove app database.
+# Globals:
+#   MYSQL_HOST
+#   MYSQL_PORT
+#   MYSQL_USER
+#   MYSQL_PASSWORD
+#   MYSQL_DB
+# Arguments:
+#   $1 - app database name
+# Returns:
+#   0 if the database create succeed,1 otherwise
+#########################
+mysql_remove_db() {
+    local init_db=${1:-MYSQL_DB}
+    local -a args=("--host=$MYSQL_HOST" "--port=$MYSQL_PORT" "--user=$MYSQL_USER" "--password=$MYSQL_PASSWORD")
+    local command="/usr/bin/mysql"
+
+    args+=("--execute=DROP DATABASE IF EXISTS $init_db;")
+    
+    info "Check whether the database exists after the initial startup."
+    debug_execute "$command" "${args[@]}" || return 1
+}
+
+########################
 # Import to mysql from mysql dump file
 # Globals:
 #   MYSQL_HOST
