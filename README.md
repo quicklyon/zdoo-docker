@@ -4,7 +4,7 @@
 ![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/quicklyon/zdoo-docker/build?style=flat-square)
 ![Docker Pulls](https://img.shields.io/docker/pulls/easysoft/zdoo?style=flat-square)
 ![Docker Image Size](https://img.shields.io/docker/image-size/easysoft/zdoo?style=flat-square)
-![GitHub tag](https://img.shields.io/github/v/tag/quicklyon/zdoo?style=flat-square)
+![GitHub tag](https://img.shields.io/github/v/tag/quicklyon/zdoo-docker?style=flat-square)
 
 ## 快速参考
 
