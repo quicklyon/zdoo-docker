@@ -6,7 +6,8 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-[ -n "${DEBUG:+1}" ] && set -x
+#[ -n "${DEBUG:+1}" ] && 
+set -x
 
 # Load libraries
 . /opt/easysoft/scripts/liblog.sh
@@ -37,9 +38,6 @@ done
 if [ ! -f /data/zdoo/.init_cfg ];then
     ensure_dir_exists "/data/zdoo" "www-data"
     mv /apps/zdoo/config /data/zdoo/ && touch /data/zdoo/.init_cfg 
-    
-    # Check whether the database exists after the initial startup
-    mysql_remove_db "$MYSQL_DB"
 fi
 
 for ldir in $PERSISTENCE_LINK_LIST
