@@ -4,7 +4,7 @@
 ![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/quicklyon/zdoo-docker/build?style=flat-square)
 ![Docker Pulls](https://img.shields.io/docker/pulls/easysoft/zdoo?style=flat-square)
 ![Docker Image Size](https://img.shields.io/docker/image-size/easysoft/zdoo?style=flat-square)
-![GitHub tag](https://img.shields.io/github/v/tag/quicklyon/zdoo-docker?style=flat-square)
+![GitHub tag](https://img.shields.io/github/v/tag/quicklyon/zdoo?style=flat-square)
 
 ## 快速参考
 
@@ -35,9 +35,8 @@ ZDoo官网：[https://www.zdoo.com/](https://www.zdoo.com/)
 由于版本比较多,这里只列出最新的5个版本,更详细的版本列表请参考:[可用版本列表](https://hub.docker.com/r/easysoft/zdoo/tags/)
 
 <!-- 这里是应用的【Tag】信息，通过命令维护，详情参考：https://github.com/quicklyon/doc-toolkit -->
-
 - [latest](https://www.zdoo.com/download/zdoo8.0-392.html)
-- [8.0-20220729](https://www.zdoo.com/download/zdoo8.0-392.html)
+- [8.0-20220730](https://www.zdoo.com/download/zdoo8.0-392.html)
 - [6.9.1](https://www.zdoo.com/dynamic/zdoo6.9.1-390.html)
 
 ## 三、获取镜像
