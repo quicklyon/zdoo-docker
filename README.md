@@ -36,7 +36,7 @@ ZDoo官网：[https://www.zdoo.com/](https://www.zdoo.com/)
 
 <!-- 这里是应用的【Tag】信息，通过命令维护，详情参考：https://github.com/quicklyon/doc-toolkit -->
 - [latest](https://www.zdoo.com/download/zdoo8.0-392.html)
-- [8.0-20220730](https://www.zdoo.com/download/zdoo8.0-392.html)
+- [8.0-20221115](https://www.zdoo.com/download/zdoo8.0-392.html)
 - [6.9.1](https://www.zdoo.com/dynamic/zdoo6.9.1-390.html)
 
 ## 三、获取镜像
@@ -115,3 +115,5 @@ docker-compose logs -f zdoo
 >
 > - 通过docker-compose运行，会拉取mysql镜像，并运行
 > - 启动成功后，打开浏览器输入 `http://<你的IP>:8081` 通过向导页面进行安装
+- [VERSION](https://github.com/quicklyon/zdoo-docker/blob/main/VERSION) 文件中详细的定义了Makefile可以操作的版本。
+- [docker-compose.yml](https://github.com/quicklyon/zdoo-docker/blob/main/docker-compose.yml)。

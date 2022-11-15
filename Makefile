@@ -7,19 +7,23 @@ help: ## this help
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {sub("\\\\n",sprintf("\n%22c"," "), $$2);printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 build: ## 构建 [基础版] 镜像
-	docker build --build-arg VERSION=$(VERSION) --build-arg IS_CHINA="true" -t hub.qucheng.com/app/zdoo:$(TAG) -f Dockerfile .
+	docker build --build-arg VERSION=$(VERSION) --build-arg IS_CHINA="true" -t hub.qucheng.com/app/$(APP_NAME):$(TAG) -f Dockerfile .
 
 docker-build: ## 构建 [基础版] 镜像
-	docker build --build-arg VERSION=$(VERSION) -t easysoft/zdoo:$(TAG) -f Dockerfile .
+	docker build --build-arg VERSION=$(VERSION) -t easysoft/$(APP_NAME):$(TAG) -f Dockerfile .
 
 
 push: ## push [基础版] 镜像
-	docker push hub.qucheng.com/app/zdoo:$(TAG)
+	docker push hub.qucheng.com/app/$(APP_NAME):$(TAG)
 
 docker-push: ## push [基础版] 镜像
-	docker tag easysoft/zdoo:$(TAG) easysoft/zdoo:latest
-	docker push easysoft/zdoo:$(TAG) 
-	docker push easysoft/zdoo:latest
+	docker tag easysoft/$(APP_NAME):$(TAG) easysoft/$(APP_NAME):latest
+	docker push easysoft/$(APP_NAME):$(TAG) 
+	docker push easysoft/$(APP_NAME):latest
+
+push-sync-tcr: docker-push ## 同步到腾讯镜像仓库
+	curl http://i.haogs.cn:3839/sync?image=easysoft/$(APP_NAME):latest
+	curl http://i.haogs.cn:3839/sync?image=easysoft/$(APP_NAME):$(TAG)
 
 run: ## 运行开源版
 	export TAG=$(TAG);docker-compose -f docker-compose.yml up -d

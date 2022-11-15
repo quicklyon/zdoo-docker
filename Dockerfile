@@ -1,4 +1,4 @@
-FROM debian:11.4-slim
+FROM debian:11.5-slim
 
 LABEL maintainer "zhouyueqiu <zhouyueqiu@easycorp.ltd>"
 
@@ -14,7 +14,7 @@ ENV TZ=Asia/Shanghai \
 ARG IS_CHINA="true"
 ENV MIRROR=${IS_CHINA}
 
-RUN install_packages curl wget zip unzip s6 pwgen cron
+RUN install_packages curl wget zip unzip s6 pwgen cron netcat ca-certificates
 
 # Install internal php
 RUN . /opt/easysoft/scripts/libcomponent.sh && component_unpack "php" "7.4.28" -c 934dd0320ee217465f6a8496b0858d120c3fd45b413f1c9ff833731a848cefa7
@@ -32,10 +32,7 @@ RUN . /opt/easysoft/scripts/libcomponent.sh && component_unpack "su-exec" "0.2" 
 RUN . /opt/easysoft/scripts/libcomponent.sh && component_unpack "render-template" "1.0.1-10" --checksum 5e410e55497aa79a6a0c5408b69ad4247d31098bdb0853449f96197180ed65a4
 
 # Install mysql-client
-RUN . /opt/easysoft/scripts/libcomponent.sh && component_unpack "mysql-client" "10.5.15" -c 31182985daa1a2a959b5197b570961cdaacf3d4e58e59a192c610f8c8f1968a8
-
-# Install wait-for-port
-RUN . /opt/easysoft/scripts/libcomponent.sh && component_unpack "wait-for-port" "1.01" -c 2ad97310f0ecfbfac13480cabf3691238fdb3759289380262eb95f8660ebb8d1
+RUN . /opt/easysoft/scripts/libcomponent.sh && component_unpack "mysql-client" "10.5.15-20220817" -c c4f82cb5b66724dd608f0bafaac400fc0d15528599e8b42be5afe8cedfd16488
 
 # Install zdoo
 ARG VERSION
