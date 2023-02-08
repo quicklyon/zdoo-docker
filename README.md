@@ -35,7 +35,8 @@ ZDoo官网：[https://www.zdoo.com/](https://www.zdoo.com/)
 由于版本比较多,这里只列出最新的5个版本,更详细的版本列表请参考:[可用版本列表](https://hub.docker.com/r/easysoft/zdoo/tags/)
 
 <!-- 这里是应用的【Tag】信息，通过命令维护，详情参考：https://github.com/quicklyon/doc-toolkit -->
-- [latest](https://www.zdoo.com/download/zdoo8.0-392.html)
+- [latest](https://www.zdoo.com/download/zdoo8.5-399.html)
+- [8.5-20230208](https://www.zdoo.com/download/zdoo8.5-399.html)
 - [8.0-20221115](https://www.zdoo.com/download/zdoo8.0-392.html)
 - [6.9.1](https://www.zdoo.com/dynamic/zdoo6.9.1-390.html)
 
