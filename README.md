@@ -1,7 +1,7 @@
 <!-- 该文档是模板生成，手动修改的内容会被覆盖，详情参见：https://github.com/quicklyon/template-toolkit -->
 # QuickOn ZDoo 应用镜像
 
-![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/quicklyon/zdoo-docker/build?style=flat-square)
+![GitHub Workflow Status (event)](https://img.shields.io/github/actions/workflow/status/quicklyon/zdoo-docker/docker.yml?style=flat-square)
 ![Docker Pulls](https://img.shields.io/docker/pulls/easysoft/zdoo?style=flat-square)
 ![Docker Image Size](https://img.shields.io/docker/image-size/easysoft/zdoo?style=flat-square)
 ![GitHub tag](https://img.shields.io/github/v/tag/quicklyon/zdoo?style=flat-square)
